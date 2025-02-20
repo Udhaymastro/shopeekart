@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+    <!-- Latest compiled JavaScript -->
+
+    <script type="text/javascript" language="javascript" src="{% static 'js/captcha.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loginpage.css' %}">
+
+
+
+  </head>
+  <body>
+    <section class="container">
+      <header>Login</header>
+      <form action="{% url 'signin' %}" class="form" method="POST">
+        {% csrf_token %}
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address" required />
+        </div>
+
+        <div class="input-box">
+          <label>Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+        </div>
+
+
+        <div class="input-box captcha">
+          <div class="form-inline">
+            <div id="captcha" class="captcha-container"></div>
+            
+            <div ><input type="button" class="captcharefresh" onclick="generateCaptcha()"></div>
+          </div>
+          <!-- <label for="captcha_input">CAPTCHA:</label> -->
+          <input type="text" id="captcha_input" name="captcha_input" placeholder="Enter CAPTCHA" required><br>
+          
+          
+         
+        </div>
+        <button type="submit" id="login">Login</button>
+      </form>
+    </section>
+       
+    
+  </body>
+</html>

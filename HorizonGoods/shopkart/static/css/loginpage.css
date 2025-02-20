@@ -1,0 +1,141 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(130, 106, 251);
+}
+.container {
+  position: relative;
+  max-width: 494px;
+  width: 100%;
+  background: #fff;
+  padding: 43px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1.5rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(120, 106, 251);
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+
+
+#captcha {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: dodgerblue;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+
+
+
+input.captcharefresh {
+  width: 100%; /* Button width */
+  height: 40px; /* Button height */
+  /* background-color: #4CAF50;  */
+  /* color: white;  */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  text-align: center; /* Align text */
+  padding-left: 40px; /* Space for the icon */
+  background-image: url('/shopkart/media/refresh.jpg'); /* Replace with your image URL */
+  background-size: 30px 30px; /* Set the icon size */
+  /* background-repeat: no-repeat;  */
+  /* background-position: left center; */
+}
+
+
+.column {
+display: flex;
+align-items: center;
+justify-content: space-between;
+column-gap: 40px;
+}
+
+.tonextpage {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+
+.showpassword {
+margin-top: 60px;
+}
+
+.orbetween{
+  margin-top: 10px;
+  font-size: 16px;
+}
+
