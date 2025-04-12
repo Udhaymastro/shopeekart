@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Credit Card Masking</title>
+</head>
+<body>
+  <h2>Using Easyocr library<h2>
+
+  <form method="post" action="{% url 'uploadpage' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" required>
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if input_img %}
+    <h3>Original Image:</h3>
+    <img src="{{ input_img }}" width="400">
+    <h3>Masked Image:</h3>
+    <img src="{{ output_img }}" width="400">
+  {% endif %}
+  <h2>Using pretarined model<h2>
+
+  <form method="POST" enctype="multipart/form-data" action="{% url 'pretrainedmodel' %}">
+    {% csrf_token %}
+    <input type="file" name="image" required>
+    <button type="submit">Upload</button>
+  </form>
+  
+  {% if inputmodel_img %}
+    <h3>Original:</h3><img src="{{ inputmodel_img }}" width="400">
+    <h3>Masked:</h3><img src="{{ outputmodel_img }}" width="400">
+  {% endif %}
+
+  <h2>Using my trained model<h2>
+
+    <form method="POST" enctype="multipart/form-data" action="{% url 'my_trained_model' %}">
+      {% csrf_token %}
+      <input type="file" name="image" required>
+      <button type="submit">Upload</button>
+    </form>
+    
+    {% if input_image %}
+      <h3>Original:</h3><img src="{{ input_image }}" width="400">
+      <h3>Masked:</h3><img src="{{ output_image }}" width="400">
+    {% endif %}
+  
+</body>
+</html>
